@@ -1,0 +1,57 @@
+list of user-visible changes between releases of osec:
+
+[1.2.5]
+Add ability to ignore check of checksum and symlink;
+Add extended attributes support;
+report: Split xattrs in two parts: selinux and other attributies;
+osec.cron: Add number of added, deleted and changed files;
+Reduced the number of memory allocations.
+
+[1.2.4]
+* Use fts(3) to traverse a file hierarchy;
+* Add osec2txt and txt2osec utilities;
+* Add simple restore utility;
+* Add osec-recheck;
+* Add time of last modification to report;
+* Add .deb build support (Konstantin A. Lepikhov).
+* osec.cron: Add allow customize ionice arguments;
+* osec_mailer: Add number of added, deleted and changed files to a mail report;
+
+[1.2.3]
+* Add --ignore option;
+* osec.cron: Add nice support.
+
+[1.2.2]
+* Add --exclude and --exclude-from options;
+* Fix for gcc-4.3;
+* Fix build for x86_64;
+
+[1.2.1]
+* Create temprary database in subdirectory;
+* Add syslog messages in osec.cron;
+* Add ionice support in osec.cron;
+* Small code optimization.
+
+[1.2.0]
+* Reduce requires (do not use openssl, libcdbxx and boost);
+* Change checksum algorithm from MD5 to SHA1;
+* Change database format;
+* Show hostname in mail subject (osec_mailer);
+* Track inode changes;
+* Track symlink changes;
+
+[1.0.0]
+* switch from Berkley DB (db4) to Constant Database:
+   - faster
+   - minor database size
+* reporter is a separate program (osec_reporter filter) now
+* no libing and libxml
+* osec now can work in read-only mode. So you can place osec and it's database to read-only
+storage, e.g. CD-ROM.
+
+[0.6.0]
+* global database locking during work
+* rewrite Reporter object
+* use session key to avoid races with system time
+* more safe deletion of keys from database
+* more safe internal encode/decode scheme
