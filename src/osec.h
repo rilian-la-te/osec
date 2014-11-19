@@ -55,7 +55,9 @@ struct field {
 	void *data;
 };
 
-#define digest_len 20 // SHA1
+//#define digest_len 20 // SHA1
+#define digest_len 64 // GOST-512
+
 
 /* common.c */
 void osec_fatal(const int exitnum, const int errnum, const char *fmt, ...);
