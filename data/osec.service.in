@@ -4,7 +4,7 @@ DefaultDependencies=no
 
 [Service]
 Type=oneshot
-ExecStart=@bindir@/osec-wrapper
+ExecStart=@prefix@/bin/osec-wrapper
 
 [Install]
 WantedBy=multi-user.target
