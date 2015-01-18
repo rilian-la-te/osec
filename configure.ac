@@ -56,5 +56,12 @@ AC_ARG_ENABLE(werror,
 	[USE_WERROR=$enableval],[USE_WERROR=no])
 AM_CONDITIONAL(USE_WERROR, test "$USE_WERROR" = "yes")
 
+PKG_PROG_PKG_CONFIG
+AC_ARG_WITH([systemdsystemunitdir],
+        AS_HELP_STRING([--with-systemdsystemunitdir=DIR], [Directory for systemd service files]),
+        [], [with_systemdsystemunitdir=$($PKG_CONFIG --variable=systemdsystemunitdir systemd)])
+AC_SUBST([systemdsystemunitdir], [$with_systemdsystemunitdir])
+AM_CONDITIONAL(HAVE_SYSTEMD, [test -n "$with_systemdsystemunitdir"])
+
 AC_CONFIG_FILES([Makefile src/Makefile update/Makefile data/Makefile data/osec.service data/osec.timer])
 AC_OUTPUT
