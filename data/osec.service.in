@@ -1,0 +1,10 @@
+[Unit]
+Description=Forcefully sets passwords expired.
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStart=@bindir@/osec-wrapper
+
+[Install]
+WantedBy=multi-user.target
