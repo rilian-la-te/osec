@@ -5,7 +5,7 @@ AC_PREREQ(2.61)
 AC_INIT(osec, 1.2.5, gladkov.alexey@gmail.com)
 AC_CONFIG_SRCDIR([src/osec.c])
 AC_CONFIG_HEADER([config.h])
-AM_INIT_AUTOMAKE([dist-bzip2])
+AM_INIT_AUTOMAKE([dist-bzip2 -Wall subdir-objects])
 
 # Checks for programs.
 AC_PROG_CC
